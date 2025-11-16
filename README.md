@@ -31,7 +31,7 @@ Examples:
    timeForWait=30 
 
 **Framework Structure** \
-All code and functions are stored in /src/main \
+All code and functions are stored in /src/main 
 - baseObjects: basic objects
 - common: different request senders and listener for websocket and all senders extends the parent class RequestSender and implement the common functions in interfaces
 - core: Factories such as factory which manufactures the senders and make them run
