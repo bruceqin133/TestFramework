@@ -66,12 +66,12 @@ public class WebSocketRequestSender extends RequestSender implements IRequestSen
                 String message = listener.waitForMessage(1, TimeUnit.SECONDS);
 
                 if (message != null) {
-                    responseStr=message;
+                    
                     allResponses.append(message).append("\n");
                     if (message.contains("result\":")) {
                         System.out.println(message.contains("result\":"));
                         allResponses.append("\nsuccessfully get data:");
-                        break;
+                        responseStr=message;
                     }
 
                 }
