@@ -54,7 +54,7 @@ Currently in test case, user can implement different scenarios by a single test 
 4. Flexible for environment switch: \
 Different environment settings are set in pom.xml and can be parameterized in .properties file. User just need to set the value in running command.
 
-**What need to be optimized?** \
+**What needs to be optimized?** \
 Because of time, something still need to be extended and optimized.
 - logger instead of system.out.print
 - test report
