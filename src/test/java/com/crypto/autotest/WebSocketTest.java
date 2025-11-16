@@ -92,6 +92,8 @@ public class WebSocketTest {
 
 
 
+
+
         //verify t exists
         String t_path=response_properties.getProperty("t");
         String t=jsonUtilResponse.getStringValueByJsonPath(t_path);
@@ -109,7 +111,7 @@ public class WebSocketTest {
 
         //verify bids if exists
         String bids_path=response_properties.getProperty("bids");
-        table=jsonUtilResponse.getTableByJsonPath(asks_path);
+        table=jsonUtilResponse.getTableByJsonPath(bids_path);
 
 
         if(table.get(0).size()>0){
