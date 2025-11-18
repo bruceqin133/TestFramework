@@ -30,6 +30,11 @@ Examples:
    body={  "id": 1,  "method": "subscribe",  "params": {    "channels": ["book.BTCUSD-PERP.10"]  }} \
    timeForWait=30 
 
+  - Select classes what you want to run (BDD or TDD):
+  please have a look at testng.xml
+   
+
+
 **Framework Structure** \
 All code and functions are stored in /src/main 
 - baseObjects: basic objects
@@ -37,13 +42,16 @@ All code and functions are stored in /src/main
 - core: Factories such as factory which manufactures the senders and make them run
 - interfaces: abstraction for different kinds of objects
 - utils: file operation
-- resource\jsonPath: All jsonpath values which are used to get values from response data are stored in this folder. One file for one API
-- resource\testCaseData: All test data are stored in this folder. One scenario one file.
+- steps: steps only for cucumber sections
+- main/resource/jsonPath: All jsonpath values which are used to get values from response data are stored in this folder. One file for one API
+- main/resource/testCaseData: All test data are stored in this folder. One scenario one file.
 - Testcases are defined under src/test path
 - You can get the reports under /target/sunfire-reports
 - pom.xml: defines the dependencies, env settings, plugins, properties settings.
 - testng.xml: The range of test cases which the user want to run.
-
+- test/resources: .features example file for BDD mode cucumber
+- RestAssuredTest and WebSocketTest under /src/test are test files only for testng TDD mode.
+- src/test/runner: A runner class which is integrated by both testng and cucumber
 **Advantages:**
 1. Support different kinds of APIs: \
 This framework supports both request for REST and websocket APIs by Factory Mode in Java. Even sometimes user can implement inter-cooperation between these 2 kinds of APIs in some scenarios.
@@ -53,6 +61,7 @@ If the data structure in response has been updated, user just need to update the
 Currently in test case, user can implement different scenarios by a single test case through data provider.
 4. Flexible for environment switch: \
 Different environment settings are set in pom.xml and can be parameterized in .properties file. User just need to set the value in running command.
+5. Integrated cucumber and testng so user can run test by both TDD and BDD mode
 
 **What needs to be optimized?** \
 Because of time, something still need to be extended and optimized.

@@ -3,15 +3,15 @@
 <suite name="TestSuite">
     <test name="APITest">
         <classes>
-            <!--
+            <!-- this is for TDD testng only-->
             <class name="com.crypto.autotest.RestAssuredTest"></class>
             <class name="com.crypto.autotest.WebSocketTest">
                 <methods>
                     <include name="testBook"/>
                 </methods>
             </class>
-            -->
 
+            <!-- this is for BDD cucumber-->
             <class name="com.crypto.autotest.runner.APITestRunner"></class>
 
         </classes>
