@@ -1,10 +1,10 @@
-package com.crypto.autotest.steps.restAssured;
+package com.myapi.autotest.steps.restAssured;
 
-import com.crypto.autotest.baseObjects.ResponseData;
-import com.crypto.autotest.common.RequestSender;
-import com.crypto.autotest.interfaces.IRequestSender;
-import com.crypto.autotest.util.JsonUtil;
-import com.crypto.autotest.util.TestCaseUtil;
+import com.myapi.autotest.baseObjects.ResponseData;
+import com.myapi.autotest.common.RequestSender;
+import com.myapi.autotest.interfaces.IRequestSender;
+import com.myapi.autotest.util.JsonUtil;
+import com.myapi.autotest.util.TestCaseUtil;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;

@@ -1,9 +1,9 @@
-package com.crypto.autotest;
-import com.crypto.autotest.baseObjects.ResponseData;
-import com.crypto.autotest.common.RequestSender;
-import com.crypto.autotest.interfaces.IRequestSender;
-import com.crypto.autotest.util.JsonUtil;
-import com.crypto.autotest.util.TestCaseUtil;
+package com.myapi.autotest;
+import com.myapi.autotest.baseObjects.ResponseData;
+import com.myapi.autotest.common.RequestSender;
+import com.myapi.autotest.interfaces.IRequestSender;
+import com.myapi.autotest.util.JsonUtil;
+import com.myapi.autotest.util.TestCaseUtil;
 import org.junit.Assert;
 import org.testng.annotations.*;
 

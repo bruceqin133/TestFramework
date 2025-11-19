@@ -1,4 +1,4 @@
-package com.crypto.autotest.common;
+package com.myapi.autotest.common;
 
 public class RequestSender {
     private String url;

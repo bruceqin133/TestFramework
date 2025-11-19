@@ -1,7 +1,7 @@
-package com.crypto.autotest.util;
+package com.myapi.autotest.util;
 
-import com.crypto.autotest.core.RequestFactory;
-import com.crypto.autotest.interfaces.IRequestSender;
+import com.myapi.autotest.core.RequestFactory;
+import com.myapi.autotest.interfaces.IRequestSender;
 
 import java.util.ArrayList;
 import java.util.List;

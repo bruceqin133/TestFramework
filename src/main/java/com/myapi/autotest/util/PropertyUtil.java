@@ -1,4 +1,4 @@
-package com.crypto.autotest.util;
+package com.myapi.autotest.util;
 
 import java.io.IOException;
 import java.io.InputStream;

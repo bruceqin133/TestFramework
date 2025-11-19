@@ -1,10 +1,10 @@
-package com.crypto.autotest.core;
+package com.myapi.autotest.core;
 
-import com.crypto.autotest.common.HttpRequestSender;
-import com.crypto.autotest.common.RestAsuredRequestSender;
-import com.crypto.autotest.common.WebSocketRequestSender;
-import com.crypto.autotest.interfaces.IRequestSender;
-import com.crypto.autotest.util.PropertyUtil;
+import com.myapi.autotest.common.HttpRequestSender;
+import com.myapi.autotest.common.RestAsuredRequestSender;
+import com.myapi.autotest.common.WebSocketRequestSender;
+import com.myapi.autotest.interfaces.IRequestSender;
+import com.myapi.autotest.util.PropertyUtil;
 
 public class RequestFactory {
 

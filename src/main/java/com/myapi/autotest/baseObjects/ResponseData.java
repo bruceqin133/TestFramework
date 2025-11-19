@@ -1,4 +1,4 @@
-package com.crypto.autotest.baseObjects;
+package com.myapi.autotest.baseObjects;
 
 public class ResponseData {
 

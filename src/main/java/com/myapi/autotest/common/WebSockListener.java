@@ -1,4 +1,4 @@
-package com.crypto.autotest.common;
+package com.myapi.autotest.common;
 
 import org.java_websocket.client.WebSocketClient;
 import org.java_websocket.handshake.ServerHandshake;

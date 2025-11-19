@@ -1,7 +1,7 @@
-package com.crypto.autotest.common;
+package com.myapi.autotest.common;
 
-import com.crypto.autotest.baseObjects.ResponseData;
-import com.crypto.autotest.interfaces.IRequestSender;
+import com.myapi.autotest.baseObjects.ResponseData;
+import com.myapi.autotest.interfaces.IRequestSender;
 import org.apache.http.HttpEntity;
 import org.apache.http.client.methods.CloseableHttpResponse;
 import org.apache.http.client.methods.HttpPost;
