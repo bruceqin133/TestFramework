@@ -62,13 +62,13 @@ Currently in test case, user can implement different scenarios by a single test 
 4. Flexible for environment switch: \
 Different environment settings are set in pom.xml and can be parameterized in .properties file. User just need to set the value in running command.
 5. Integrated cucumber and testng so user can run test by both TDD and BDD mode
+6. The next step can use parameters returned from the last step (see GetBook.feature).
 
 **What needs to be optimized?** \
 Because of time, something still need to be extended and optimized.
 - logger instead of system.out.print
 - test report
 - The structure for testing data still need to be optimized. The websocket request and http request could be separated.
-- Some functions such as that 2nd API input will depend on the response of the 1st API are currently not supported for test data module.
 - User can only get and return the last webSocket API during the time expiration.
 
 _(Note: Please reset or close proxy settings in pom.xml if needed.)_
