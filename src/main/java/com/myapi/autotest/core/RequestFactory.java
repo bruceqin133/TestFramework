@@ -5,6 +5,9 @@ import com.myapi.autotest.common.RestAsuredRequestSender;
 import com.myapi.autotest.common.WebSocketRequestSender;
 import com.myapi.autotest.interfaces.IRequestSender;
 import com.myapi.autotest.util.PropertyUtil;
+import com.myapi.autotest.util.TestCaseUtil;
+
+import java.util.HashMap;
 
 public class RequestFactory {
 
@@ -49,5 +52,34 @@ public class RequestFactory {
         return this.requestSender;
     }
 
+    public IRequestSender getRequestSender(HashMap<String,String> inputsMap){
+        String requestType=propertyUtil.getPropertyValue("requestType");
+        if(requestType.equalsIgnoreCase("http")){
+            String url=propertyUtil.getPropertyValue("url");
+            String method=propertyUtil.getPropertyValue("method");
+            String body="";
+            if (method.equalsIgnoreCase("POST")) {
+                body=propertyUtil.getPropertyValue("body");
+                body=TestCaseUtil.fillAllParameters(inputsMap,body);
+            }
+            this.requestSender=new HttpRequestSender(TestCaseUtil.fillAllParameters(inputsMap,url),method,body);
 
+        }
+        else if(requestType.equalsIgnoreCase("webSocket")){
+            String url=propertyUtil.getPropertyValue("url");
+            String body=propertyUtil.getPropertyValue("body");
+            String timeForWait=propertyUtil.getPropertyValue("timeForWait");
+            this.requestSender=new WebSocketRequestSender(TestCaseUtil.fillAllParameters(inputsMap,url),"none",TestCaseUtil.fillAllParameters(inputsMap,body),timeForWait);
+        }
+        else{
+            String url=propertyUtil.getPropertyValue("url");
+            String method=propertyUtil.getPropertyValue("method");
+            String body="";
+            if (method.equalsIgnoreCase("POST")) {
+                body=propertyUtil.getPropertyValue("body");
+            }
+            this.requestSender=new RestAsuredRequestSender(TestCaseUtil.fillAllParameters(inputsMap,url),method,TestCaseUtil.fillAllParameters(inputsMap,body));
+        }
+        return this.requestSender;
+    }
 }

@@ -4,6 +4,7 @@ import com.myapi.autotest.core.RequestFactory;
 import com.myapi.autotest.interfaces.IRequestSender;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Properties;
 import java.util.regex.Matcher;
@@ -15,6 +16,14 @@ public class TestCaseUtil {
         propertyUtil.loadPropertiesFromFile("/testCaseData/"+fileName);
         RequestFactory requestFactory = new RequestFactory(propertyUtil);
         IRequestSender requestSender=requestFactory.getRequestSender();
+        return requestSender;
+    }
+
+    public static IRequestSender getRequestData(HashMap<String,String> inputsMap,String fileName){
+        PropertyUtil propertyUtil = new PropertyUtil();
+        propertyUtil.loadPropertiesFromFile("/testCaseData/"+fileName);
+        RequestFactory requestFactory = new RequestFactory(propertyUtil);
+        IRequestSender requestSender=requestFactory.getRequestSender(inputsMap);
         return requestSender;
     }
 
@@ -33,6 +42,19 @@ public class TestCaseUtil {
         PropertyUtil propertyUtil = new PropertyUtil();
         Properties properties=propertyUtil.loadPropertiesFromFile("/jsonPath/" + fileName);
         return properties;
+    }
+
+    public static String fillAllParameters(HashMap<String,String> inputsMap,String context){
+        Pattern pattern=Pattern.compile("\\$\\{(.*?)\\}");
+        String targetContext=context;
+        Matcher matcher=pattern.matcher(context);
+        while (matcher.find()) {
+            String key=matcher.group(1);
+            String value=inputsMap.get(key);
+            targetContext=targetContext.replace(matcher.group(0),value);
+        }
+
+        return targetContext;
     }
 
     public static ArrayList<IRequestSender> getRequestDataList(ArrayList<String> fileList){

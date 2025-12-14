@@ -90,10 +90,6 @@ public class WebSocketTest {
             Assert.assertEquals(arr.length,3);
         }
 
-
-
-
-
         //verify t exists
         String t_path=response_properties.getProperty("t");
         String t=jsonUtilResponse.getStringValueByJsonPath(t_path);
@@ -121,9 +117,20 @@ public class WebSocketTest {
 
         }
 
-
-
     }
 
-
+    @Test
+    public void testBookForParameterized(){
+        HashMap<String,String> inputsMap=new HashMap<>();
+        inputsMap.put("book","book");
+        inputsMap.put("channel","BTCUSD-PERP");
+        inputsMap.put("count","10");
+        IRequestSender reqestSender= TestCaseUtil.getRequestData(inputsMap,"happyFlowSockParameterized.properties");
+        String requestBody=((RequestSender)reqestSender).getBody();
+        System.out.println(requestBody);
+        String url=((RequestSender)reqestSender).getUrl();
+        System.out.println(url);
+        ResponseData response=reqestSender.sendRequest();
+        System.out.println(response.getBody());
+    }
 }
